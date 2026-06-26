@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a0a0a"/><path d="M20 20h60v60H20z" fill="none" stroke="%23e50914" stroke-width="1"/></svg>');
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #e50914, #ff3d3d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.cta-button {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ff3d3d;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(229, 9, 20, 0.4);
+}
+
+.overview {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.overview h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #e50914;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.2);
+}
+
+.card h3 {
+    color: #aaa;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+.charts {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.charts h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #e50914;
+}
+
+.chart-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid #333;
+}
+
+.chart-card h3 {
+    color: #e50914;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-description {
+    color: #aaa;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+canvas {
+    max-width: 100%;
+}
+
+.conclusion {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.conclusion h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #e50914;
+}
+
+.conclusion p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.data-source {
+    padding: 30px 20px;
+    text-align: center;
+    background: #0a0a0a;
+    border-top: 1px solid #333;
+    margin-top: 60px;
+}
+
+.data-source p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .overview h2,
+    .charts h2 {
+        font-size: 2rem;
+    }
+    
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-card {
+        padding: 20px;
+    }
+}
