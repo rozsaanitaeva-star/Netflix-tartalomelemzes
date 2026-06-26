@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix tartalomelemzés</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <header class="hero">
+        <h1>Netflix tartalomelemzés</h1>
+        <p class="subtitle">A Netflix filmjeinek és sorozatainak vizuális bemutatása</p>
+        <p class="intro">Ez az oldal a Netflix katalógusát elemzi a CSV adatai alapján, feltárva a tartalmak típusait, műfajait, korhatár-besorolásaikat és többi érdekességét.</p>
+        <button class="cta-button" onclick="scrollToCharts()">Diagramok megtekintése</button>
+    </header>
+
+    <section class="overview">
+        <h2>Áttekintés</h2>
+        <div class="cards">
+            <div class="card" id="total-titles-card">
+                <h3>Összes cím</h3>
+                <p class="stat" id="total-titles">-</p>
+            </div>
+            <div class="card" id="movies-card">
+                <h3>Filmek</h3>
+                <p class="stat" id="movies-count">-</p>
+            </div>
+            <div class="card" id="tvshows-card">
+                <h3>Sorozatok</h3>
+                <p class="stat" id="tvshows-count">-</p>
+            </div>
+            <div class="card" id="earliest-year-card">
+                <h3>Legkorábbi év</h3>
+                <p class="stat" id="earliest-year">-</p>
+            </div>
+            <div class="card" id="latest-year-card">
+                <h3>Legfrissebb év</h3>
+                <p class="stat" id="latest-year">-</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="charts" id="charts">
+        <h2>Diagramok</h2>
+        
+        <div class="chart-card">
+            <h3>Filmek és sorozatok aránya</h3>
+            <canvas id="typeChart"></canvas>
+            <p class="chart-description">A diagram megmutatja, hogy a Netflix katalógusában hány film és hány sorozat szerepel a típusuk szerint csoportosítva.</p>
+        </div>
+
+        <div class="chart-card">
+            <h3>Leggyakoribb műfajok</h3>
+            <canvas id="genreChart"></canvas>
+            <p class="chart-description">A leg10 leggyakoribb műfaj összegyűjtve a "listed_in" oszlop alapján, vesszővel elválasztott értékek figyelembevételével.</p>
+        </div>
+
+        <div class="chart-card">
+            <h3>Leggyakoribb országok</h3>
+            <canvas id="countryChart"></canvas>
+            <p class="chart-description">Az 10 leggyakoribb gyártási ország a "country" oszlop alapján, több ország egyszerre megadása esetén külön kezelve.</p>
+        </div>
+
+        <div class="chart-card">
+            <h3>Korhatár-besorolások megoszlása</h3>
+            <canvas id="ratingChart"></canvas>
+            <p class="chart-description">A tartalmak korhatár-besorolásinak megoszlása a "rating" oszlop alapján, üres értékek figyelmen kívül hagyásával.</p>
+        </div>
+
+        <div class="chart-card">
+            <h3>Megjelenési évek megoszlása</h3>
+            <canvas id="yearChart"></canvas>
+            <p class="chart-description">A tartalmak megjelenési évek szerinti eloszlása, amely azt mutatja, mely időszakokból származik a legtöbb Netflix-tartalom.</p>
+        </div>
+
+        <div class="chart-card">
+            <h3>Netflixre felkerült tartalmak évenként</h3>
+            <canvas id="addedChart"></canvas>
+            <p class="chart-description">Az évenkénti felvételi adatok a "date_added" oszlop alapján, amelyek azt mutatják, melyik évben került fel a legtöbb új tartalom a platformra.</p>
+        </div>
+    </section>
+
+    <section class="conclusion">
+        <h2>Következtetés</h2>
+        <p>Az elemzés alapján látható, hogy a Netflix katalógusa nagy és változatos. A filmek nagyobb arányban jelennek meg az adatbázisban, mint a sorozatok. A műfajok között sok a nemzetközi film, dráma és vígjáték, az országok alapján pedig az Amerikai Egyesült Államok és India különösen gyakran szerepelnek. A korhatár-besorolások azt mutatják, hogy sok tartalom inkább tinédzsereknek és felnőtt nézőknek szól.</p>
+    </section>
+
+    <footer class="data-source">
+        <p><strong>Adatforrás</strong>: netflix_titles.csv. Az adatbázis Netflix filmeket és sorozatokat tartalmaz, többek között címmel, típussal, országgal, megjelenési évvel, korhatár-besorolással, időtartammal, műfajjal és rövid leírással.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
